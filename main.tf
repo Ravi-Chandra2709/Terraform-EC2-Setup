@@ -70,7 +70,7 @@ resource "aws_key_pair" "tf_ec2_key" {
 
 # Launch EC2 Instance (Free Tier Eligible)
 resource "aws_instance" "example" {
-  ami                    = "ami-<id>"  # Ubuntu Server 22.04 LTS # replace this with ami id you want to 
+  ami                    = "ami-<id>"  # Ubuntu Server 22.04 LTS
   instance_type          = "t2.micro"  # Free-tier eligible instance
   key_name               = aws_key_pair.tf_ec2_key.key_name
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
